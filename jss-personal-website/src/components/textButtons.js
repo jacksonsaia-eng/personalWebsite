@@ -10,9 +10,9 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     button: {
-        color: '#ffe5b4',
+        color: '#ffdc9b',
         '&:hover': {
-            backgroundColor: '#ffe5b4',
+            backgroundColor: '#ffdc9b',
             color: 'white',
         },
 
