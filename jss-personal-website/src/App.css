@@ -10,5 +10,9 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #ffdc9b;
+  /* color: #ffdc9b; */
+}
+
+.Side-bar {
+  margin-left: 0;
 }

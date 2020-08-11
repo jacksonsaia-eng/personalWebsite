@@ -92,7 +92,6 @@ export default function SideDrawer() {
 
     return (
         <div className={classes.root}>
-            <CssBaseline />
             <AppBar
                 position="fixed"
                 className={clsx(classes.appBar, {
