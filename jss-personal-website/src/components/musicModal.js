@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Window, WindowContent, WindowHeader, Button, Anchor, Tabs, Tab, TabBody } from 'react95';
 import { StoreContext } from '../store';
 
-const AboutModal = () => {
+const MusicModal = () => {
     const [state, dispatch] = useContext(StoreContext);
 
     const [setState] = useState({
@@ -10,13 +10,12 @@ const AboutModal = () => {
     });
 
     const _handleClose = () => {
-        dispatch({ type: 'SET_ABOUT_MODAL', payload: false });
-        dispatch({ type: 'SET_HIDE_ABOUT_MODAL_BUTTON', payload: true });
-        dispatch({ type: 'SET_TAB', payload: 0 });
+        dispatch({ type: 'SET_MUSIC_MODAL', payload: false });
+        dispatch({ type: 'SET_HIDE_MUSIC_MODAL_BUTTON', payload: true });
     };
 
     const _handleClick = () => {
-        dispatch({ type: 'SET_ACTIVE_MODAL', payload: 'about' });
+        dispatch({ type: 'SET_ACTIVE_MODAL', payload: 'music' });
     };
 
     const _handleChange = (_, tab) => {
@@ -30,12 +29,12 @@ const AboutModal = () => {
                 width: 500,
                 maxWidth: '94%',
                 maxHeight: '100%',
-                zIndex: state.activeModal === 'about' ? 2 : 1,
+                zIndex: state.activeModal === 'music' ? 2 : 1,
                 position: 'fixed',
                 top: '50%',
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
-                display: state.aboutModal ? 'block' : 'none',
+                display: state.musicModal ? 'block' : 'none',
             }}
         >
             <WindowHeader style={{
@@ -43,7 +42,7 @@ const AboutModal = () => {
                 alignItems: 'center',
                 justifyContent: 'space-between',
             }}>
-                <span>about.exe</span>
+                <span>music.exe</span>
                 <Button onClick={_handleClose}>
                     <span style={{ fontWeight: 'bold', transform: 'translateY(-1px)' }}>
                         x
@@ -58,7 +57,7 @@ const AboutModal = () => {
                 <TabBody style={{ height: 300 }}>
                     {state.tab === 0 && (
                         <p>
-                            welcome! my name is jackson saia and i am passionate about the intersection of art and
+                            welcome! my name is jackson saia and i am passionate music the intersection of art and
                             technology. i am a junior at brown university, studying electrical engineering. i focus
                             mainly on music outside of school, but also love taking photos and making short videos
                             to document my life. i have also been working as a software developer on the side for
@@ -106,4 +105,4 @@ const AboutModal = () => {
     );
 };
 
-export default AboutModal;
+export default MusicModal;

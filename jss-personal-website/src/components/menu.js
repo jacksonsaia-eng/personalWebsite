@@ -19,6 +19,10 @@ const Menu = () => {
             dispatch({ type: 'SET_ACTIVE_MODAL', payload: 'about' });
             dispatch({ type: 'SET_ABOUT_MODAL', payload: true });
             dispatch({ type: 'SET_HIDE_ABOUT_MODAL_BUTTON', payload: false });
+        } else if (name === 'music') {
+            dispatch({ type: 'SET_ACTIVE_MODAL', payload: 'music' });
+            dispatch({ type: 'SET_MUSIC_MODAL', payload: true });
+            dispatch({ type: 'SET_HIDE_MUSIC_MODAL_BUTTON', payload: false });
         }
         // else if (name === 'github') {
         //   const win = window.open('https://github.com/sorxrob/poke95', '_blank');
@@ -45,6 +49,12 @@ const Menu = () => {
                                 📋
                             </span>
                             <span>about</span>
+                        </ListItem>
+                        <ListItem onClick={() => _handleListItemClick('music')}>
+                            <span role='img' aria-label='🎧'>
+                                🎧
+                            </span>
+                            <span>music</span>
                         </ListItem>
                     </List>
                 )}

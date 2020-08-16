@@ -11,8 +11,10 @@ import Store from './store';
 
 // Components
 import AboutModal from './components/aboutModal';
+import MusicModal from './components/musicModal';
 import Menu from './components/menu';
 import AboutModalButton from './components/aboutModalButton';
+import MusicModalButton from './components/musicModalButton';
 
 import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
@@ -45,8 +47,11 @@ function App() {
         <nav>
           <AppBar style={{ zIndex: 3 }}>
             <Toolbar style={{ justifyContent: 'space-between' }}>
-              <Menu />
-              <AboutModalButton />
+              <div>
+                <Menu />
+                <AboutModalButton />
+                <MusicModalButton />
+              </div>
               <div>
                 <a href="https://www.instagram.com/jaxonss/">
                   <Button square>
@@ -65,6 +70,7 @@ function App() {
         <main>
           <div className="App-header">
             <AboutModal />
+            <MusicModal />
           </div>
         </main>
       </ThemeProvider>
