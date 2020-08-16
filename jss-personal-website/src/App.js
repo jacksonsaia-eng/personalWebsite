@@ -1,15 +1,21 @@
 import React from 'react';
 import './App.css';
-import Main from './pages/main';
-import WindowsAppBar from './components/windowsAppBar';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { styleReset, AppBar, Toolbar, Button } from 'react95';
 
-import { styleReset } from 'react95';
-// pick a theme of your choice
-import lilac from "react95/dist/themes/lilac";
-// original Windows95 font (optionally)
-import ms_sans_serif from "react95/dist/fonts/ms_sans_serif.woff2";
-import ms_sans_serif_bold from "react95/dist/fonts/ms_sans_serif_bold.woff2";
+import lilac from 'react95/dist/themes/lilac';
+import ms_sans_serif from 'react95/dist/fonts/ms_sans_serif.woff2';
+import ms_sans_serif_bold from 'react95/dist/fonts/ms_sans_serif_bold.woff2';
+
+import Store from './store';
+
+// Components
+import AboutModal from './components/aboutModal';
+import Menu from './components/menu';
+import AboutModalButton from './components/aboutModalButton';
+
+import InstagramIcon from '@material-ui/icons/Instagram';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -30,14 +36,40 @@ const GlobalStyles = createGlobalStyle`
   ${styleReset}
 `;
 
-const App = () => (
-  <div className="App-header">
-    <GlobalStyles />
-    <ThemeProvider theme={lilac}>
-      <WindowsAppBar />
-      <Main />
-    </ThemeProvider>
-  </div>
-);
+function App() {
+
+  return (
+    <Store>
+      <GlobalStyles />
+      <ThemeProvider theme={lilac}>
+        <nav>
+          <AppBar style={{ zIndex: 3 }}>
+            <Toolbar style={{ justifyContent: 'space-between' }}>
+              <Menu />
+              <AboutModalButton />
+              <div>
+                <a href="https://www.instagram.com/jaxonss/">
+                  <Button square>
+                    <InstagramIcon />
+                  </Button>
+                </a>
+                <a href="https://www.linkedin.com/in/jackson-saia-a47b0a18b/">
+                  <Button square>
+                    <LinkedInIcon />
+                  </Button>
+                </a>
+              </div>
+            </Toolbar>
+          </AppBar>
+        </nav>
+        <main>
+          <div className="App-header">
+            <AboutModal />
+          </div>
+        </main>
+      </ThemeProvider>
+    </Store>
+  );
+}
 
 export default App;
