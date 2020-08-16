@@ -33,7 +33,7 @@ const AboutModal = () => {
                 zIndex: state.activeModal === 'about' ? 2 : 1,
                 position: 'fixed',
                 top: '50%',
-                left: '50%',
+                left: '75%',
                 transform: 'translate(-50%, -50%)',
                 display: state.aboutModal ? 'block' : 'none',
             }}

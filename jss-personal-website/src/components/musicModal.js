@@ -1,13 +1,10 @@
 import React, { useContext, useState } from 'react';
-import { Window, WindowContent, WindowHeader, Button, Anchor, Tabs, Tab, TabBody } from 'react95';
+import ReactPlayer from 'react-player'
+import { Window, WindowContent, WindowHeader, Button } from 'react95';
 import { StoreContext } from '../store';
 
 const MusicModal = () => {
     const [state, dispatch] = useContext(StoreContext);
-
-    const [setState] = useState({
-        activeTab: 0
-    });
 
     const _handleClose = () => {
         dispatch({ type: 'SET_MUSIC_MODAL', payload: false });
@@ -18,21 +15,17 @@ const MusicModal = () => {
         dispatch({ type: 'SET_ACTIVE_MODAL', payload: 'music' });
     };
 
-    const _handleChange = (_, tab) => {
-        dispatch({ type: 'SET_TAB', payload: tab });
-    };
-
     return (
         <Window
             onClick={_handleClick}
             style={{
-                width: 500,
+                width: 1000,
                 maxWidth: '94%',
                 maxHeight: '100%',
                 zIndex: state.activeModal === 'music' ? 2 : 1,
                 position: 'fixed',
                 top: '50%',
-                left: '50%',
+                left: '40%',
                 transform: 'translate(-50%, -50%)',
                 display: state.musicModal ? 'block' : 'none',
             }}
@@ -50,56 +43,26 @@ const MusicModal = () => {
                 </Button>
             </WindowHeader>
             <WindowContent>
-                <Tabs value={state.tab} onChange={_handleChange}>
-                    <Tab value={0}>overview</Tab>
-                    <Tab value={1}>contact</Tab>
-                </Tabs>
-                <TabBody style={{ height: 300 }}>
-                    {state.tab === 0 && (
-                        <p>
-                            welcome! my name is jackson saia and i am passionate music the intersection of art and
-                            technology. i am a junior at brown university, studying electrical engineering. i focus
-                            mainly on music outside of school, but also love taking photos and making short videos
-                            to document my life. i have also been working as a software developer on the side for
-                            some time now. this website is a side project to showcase all the things that i
-                            love to do. enjoy!
-                        </p>
-                    )}
-                    {state.tab === 1 && (
-                        <div>
-                            <div>
-                                <p>email: <Anchor
-                                    href="mailto: jackson_saia@brown.edu"
-                                    target="_blank"
-                                >
-                                    jackson_saia@brown.edu
-                                    </Anchor>
-                                </p>
-                                <p>instagram: <Anchor
-                                    href="https://www.instagram.com/jaxonss/"
-                                    target="_blank"
-                                >
-                                    @jaxonss
-                                    </Anchor>
-                                </p>
-                                <p>linkedin: <Anchor
-                                    href="https://www.linkedin.com/in/jackson-saia-a47b0a18b/"
-                                    target="_blank"
-                                >
-                                    @jackson-saia
-                                    </Anchor>
-                                </p>
-                                <p>github: <Anchor
-                                    href="https://github.com/jacksonsaia-eng"
-                                    target="_blank"
-                                >
-                                    @jacksonsaia-eng
-                                    </Anchor>
-                                </p>
-                            </div>
-                        </div>
-                    )}
-                </TabBody>
+                <ReactPlayer
+                    url="https://soundcloud.com/jaisairin/drowning"
+                    height='140px'
+                    width='100%'
+                />
+                <ReactPlayer
+                    url="https://soundcloud.com/jaisairin/say-hello"
+                    height='140px'
+                    width='100%'
+                />
+                <ReactPlayer
+                    url="https://soundcloud.com/jaisairin/she-say-ft-prettyboyworldwyde"
+                    height='140px'
+                    width='100%'
+                />
+                <ReactPlayer
+                    url="https://soundcloud.com/jaisairin/closer-to-the-truth-katherine-beggs-x-jaisairin-1"
+                    height='140px'
+                    width='100%'
+                />
             </WindowContent>
         </Window >
     );

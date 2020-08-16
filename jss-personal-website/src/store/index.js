@@ -3,8 +3,8 @@ import React, { createContext, useReducer } from 'react';
 export const StoreContext = createContext({});
 
 const initialState = {
-    aboutModal: false,
-    musicModal: false,
+    aboutModal: true,
+    musicModal: true,
     activeModal: '',
     hideAboutModalButton: true,
     hideMusicModalButton: true,
@@ -42,6 +42,11 @@ function reducer(state, action) {
             return {
                 ...state,
                 hideMusicModalButton: action.payload,
+            };
+        case 'SET_ACTIVE_MODAL':
+            return {
+                ...state,
+                activeModal: action.payload,
             };
         default:
             return state;
