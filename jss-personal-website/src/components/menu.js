@@ -1,6 +1,6 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { StoreContext } from '../store';
-import { Button, List, ListItem, Divider } from 'react95';
+import { Button, List, ListItem } from 'react95';
 import ClickAwayListener from 'react-click-away-listener';
 
 const Menu = () => {
@@ -23,6 +23,10 @@ const Menu = () => {
             dispatch({ type: 'SET_ACTIVE_MODAL', payload: 'music' });
             dispatch({ type: 'SET_MUSIC_MODAL', payload: true });
             dispatch({ type: 'SET_HIDE_MUSIC_MODAL_BUTTON', payload: false });
+        } else if (name === 'video') {
+            dispatch({ type: 'SET_ACTIVE_MODAL', payload: 'video' });
+            dispatch({ type: 'SET_VIDEO_MODAL', payload: true });
+            dispatch({ type: 'SET_HIDE_VIDEO_MODAL_BUTTON', payload: false });
         }
         // else if (name === 'github') {
         //   const win = window.open('https://github.com/sorxrob/poke95', '_blank');
@@ -55,6 +59,12 @@ const Menu = () => {
                                 🎧
                             </span>
                             <span>music</span>
+                        </ListItem>
+                        <ListItem onClick={() => _handleListItemClick('video')}>
+                            <span role='img' aria-label='🎥'>
+                                🎥
+                            </span>
+                            <span>video</span>
                         </ListItem>
                     </List>
                 )}

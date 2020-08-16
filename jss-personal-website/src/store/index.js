@@ -5,9 +5,11 @@ export const StoreContext = createContext({});
 const initialState = {
     aboutModal: true,
     musicModal: true,
-    activeModal: '',
-    hideAboutModalButton: true,
-    hideMusicModalButton: true,
+    videoModal: true,
+    activeModal: 'about',
+    hideAboutModalButton: false,
+    hideMusicModalButton: false,
+    hideVideoModalButton: false,
     tab: 0,
 };
 
@@ -28,6 +30,11 @@ function reducer(state, action) {
                 ...state,
                 musicModal: action.payload,
             };
+        case 'SET_VIDEO_MODAL':
+            return {
+                ...state,
+                videoModal: action.payload,
+            };
         case 'SET_TAB':
             return {
                 ...state,
@@ -42,6 +49,11 @@ function reducer(state, action) {
             return {
                 ...state,
                 hideMusicModalButton: action.payload,
+            };
+        case 'SET_HIDE_VIDEO_MODAL_BUTTON':
+            return {
+                ...state,
+                hideVideoModalButton: action.payload,
             };
         case 'SET_ACTIVE_MODAL':
             return {

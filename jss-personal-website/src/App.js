@@ -12,9 +12,11 @@ import Store from './store';
 // Components
 import AboutModal from './components/aboutModal';
 import MusicModal from './components/musicModal';
+import VideoModal from './components/videoModal';
 import Menu from './components/menu';
 import AboutModalButton from './components/aboutModalButton';
 import MusicModalButton from './components/musicModalButton';
+import VideoModalButton from './components/videoModalButton';
 
 import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
@@ -51,6 +53,7 @@ function App() {
                 <Menu />
                 <AboutModalButton />
                 <MusicModalButton />
+                <VideoModalButton />
               </div>
               <div>
                 <a href="https://www.instagram.com/jaxonss/">
@@ -71,6 +74,7 @@ function App() {
           <div className="App-header">
             <AboutModal />
             <MusicModal />
+            <VideoModal />
           </div>
         </main>
       </ThemeProvider>
