@@ -23,6 +23,10 @@ const Menu = () => {
             dispatch({ type: 'SET_ACTIVE_MODAL', payload: 'music' });
             dispatch({ type: 'SET_MUSIC_MODAL', payload: true });
             dispatch({ type: 'SET_HIDE_MUSIC_MODAL_BUTTON', payload: false });
+        } else if (name === 'photo') {
+            dispatch({ type: 'SET_ACTIVE_MODAL', payload: 'photo' });
+            dispatch({ type: 'SET_PHOTO_MODAL', payload: true });
+            dispatch({ type: 'SET_HIDE_PHOTO_MODAL_BUTTON', payload: false });
         } else if (name === 'video') {
             dispatch({ type: 'SET_ACTIVE_MODAL', payload: 'video' });
             dispatch({ type: 'SET_VIDEO_MODAL', payload: true });
@@ -59,6 +63,12 @@ const Menu = () => {
                                 🎧
                             </span>
                             <span>music</span>
+                        </ListItem>
+                        <ListItem onClick={() => _handleListItemClick('photo')}>
+                            <span role='img' aria-label='📷'>
+                                📷
+                            </span>
+                            <span>photo</span>
                         </ListItem>
                         <ListItem onClick={() => _handleListItemClick('video')}>
                             <span role='img' aria-label='🎥'>
