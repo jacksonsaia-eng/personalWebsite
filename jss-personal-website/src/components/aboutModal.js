@@ -57,9 +57,8 @@ const AboutModal = () => {
                                 welcome! my name is jackson saia and i am passionate about the intersection of art and
                                 technology. i am a junior at brown university, studying electrical engineering. i focus
                                 mainly on music outside of school, but also love taking photos and making short videos
-                                to document my life. i have also been working as a software developer on the side for
-                                some time now. this website is a side project to showcase all the things that i
-                                love to do. enjoy!
+                                to document my life. i currently work as a backend software developer at intus care.
+                                this website is a side project to showcase all the things that i love to do. enjoy!
                             </p>
                         )}
                         {state.tab === 1 && (
