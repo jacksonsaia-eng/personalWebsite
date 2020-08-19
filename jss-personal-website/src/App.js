@@ -47,7 +47,7 @@ function App() {
 
   setTimeout(function () {
     setLoading(false);
-  }, 1000);
+  }, 2000);
 
   if (loading) {
     return (
@@ -58,7 +58,7 @@ function App() {
           justifyContent: 'center',
           alignItems: 'center',
           height: '100%',
-          backgroundColor: '#b19cd9'
+          backgroundColor: '#ffc6ed'
         }}>
         <Hourglass size={50} />
       </div>

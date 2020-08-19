@@ -1,8 +1,9 @@
-import React, { useContext, useState } from 'react';
-import { Window, WindowContent, WindowHeader, Button, Table } from 'react95';
+import React, { useContext } from 'react';
+import { Window, WindowContent, WindowHeader, Button, Cutout } from 'react95';
 import { StoreContext } from '../store';
-import image from '../images/gallery/IMG_8046.JPG';
 import Draggable from 'react-draggable';
+import Gallery from "react-photo-gallery";
+import { photos } from './photos';
 
 const PhotoModal = () => {
     const [state, dispatch] = useContext(StoreContext);
@@ -43,10 +44,11 @@ const PhotoModal = () => {
                     </Button>
                 </WindowHeader>
                 <WindowContent>
-                    <Table style={{ width: '100%', overflowY: 'scroll' }}>
-                        <img src={image} style={{ width: '100%' }} />
-                        {/* <img src={image} style={{ width: '100%' }} /> */}
-                    </Table>
+                    <Cutout style={{ height: 500 }}>
+                        <div style={{ maxHeight: '100% ', overflowY: 'scroll' }}>
+                            <Gallery photos={photos} />
+                        </div>
+                    </Cutout>
                 </WindowContent>
             </Window >
         </Draggable>

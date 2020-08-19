@@ -7,7 +7,7 @@ const initialState = {
     musicModal: false,
     photoModal: false,
     videoModal: false,
-    activeModal: 'about',
+    activeModal: 'photo',
     hideAboutModalButton: false,
     hideMusicModalButton: true,
     hidePhotoModalButton: true,

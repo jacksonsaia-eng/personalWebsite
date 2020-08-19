@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import ReactPlayer from 'react-player'
-import { Window, WindowContent, WindowHeader, Button } from 'react95';
+import { Window, WindowContent, WindowHeader, Button, Cutout } from 'react95';
 import { StoreContext } from '../store';
 import Draggable from 'react-draggable';
 
@@ -43,26 +43,28 @@ const MusicModal = () => {
                     </Button>
                 </WindowHeader>
                 <WindowContent>
-                    <ReactPlayer
-                        url="https://soundcloud.com/jaisairin/drowning"
-                        height='140px'
-                        width='100%'
-                    />
-                    <ReactPlayer
-                        url="https://soundcloud.com/jaisairin/say-hello"
-                        height='140px'
-                        width='100%'
-                    />
-                    <ReactPlayer
-                        url="https://soundcloud.com/jaisairin/she-say-ft-prettyboyworldwyde"
-                        height='140px'
-                        width='100%'
-                    />
-                    <ReactPlayer
-                        url="https://soundcloud.com/jaisairin/closer-to-the-truth-katherine-beggs-x-jaisairin-1"
-                        height='140px'
-                        width='100%'
-                    />
+                    <Cutout>
+                        <ReactPlayer
+                            url="https://soundcloud.com/jaisairin/drowning"
+                            height='140px'
+                            width='100%'
+                        />
+                        <ReactPlayer
+                            url="https://soundcloud.com/jaisairin/say-hello"
+                            height='140px'
+                            width='100%'
+                        />
+                        <ReactPlayer
+                            url="https://soundcloud.com/jaisairin/she-say-ft-prettyboyworldwyde"
+                            height='140px'
+                            width='100%'
+                        />
+                        <ReactPlayer
+                            url="https://soundcloud.com/jaisairin/closer-to-the-truth-katherine-beggs-x-jaisairin-1"
+                            height='140px'
+                            width='100%'
+                        />
+                    </Cutout>
                 </WindowContent>
             </Window >
         </Draggable>

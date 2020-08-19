@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { StoreContext } from '../store';
 import { Button, List, ListItem } from 'react95';
 import ClickAwayListener from 'react-click-away-listener';

@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import ReactPlayer from 'react-player'
-import { Window, WindowContent, WindowHeader, Button } from 'react95';
+import { Window, WindowContent, WindowHeader, Button, Cutout } from 'react95';
 import { StoreContext } from '../store';
 import Draggable from 'react-draggable';
 
@@ -14,10 +14,6 @@ const VideoModal = () => {
 
     const _handleClick = () => {
         dispatch({ type: 'SET_ACTIVE_MODAL', payload: 'video' });
-    };
-
-    const _handleChange = (_, tab) => {
-        dispatch({ type: 'SET_TAB', payload: tab });
     };
 
     return (
@@ -47,10 +43,12 @@ const VideoModal = () => {
                     </Button>
                 </WindowHeader>
                 <WindowContent>
-                    <ReactPlayer
-                        url="https://www.youtube.com/watch?v=Sco5EFnU6K8"
-                        width='100%'
-                    />
+                    <Cutout>
+                        <ReactPlayer
+                            url="https://www.youtube.com/watch?v=Sco5EFnU6K8"
+                            width='100%'
+                        />
+                    </Cutout>
                 </WindowContent>
             </Window >
         </Draggable>

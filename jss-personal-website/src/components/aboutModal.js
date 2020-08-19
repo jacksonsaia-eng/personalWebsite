@@ -1,14 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Window, WindowContent, WindowHeader, Button, Anchor, Tabs, Tab, TabBody } from 'react95';
 import { StoreContext } from '../store';
 import Draggable from 'react-draggable';
 
 const AboutModal = () => {
     const [state, dispatch] = useContext(StoreContext);
-
-    const [setState] = useState({
-        activeTab: 0
-    });
 
     const _handleClose = () => {
         dispatch({ type: 'SET_ABOUT_MODAL', payload: false });
@@ -95,6 +91,20 @@ const AboutModal = () => {
                                         target="_blank"
                                     >
                                         @jacksonsaia-eng
+                                    </Anchor>
+                                    </p>
+                                    <p>spotify: <Anchor
+                                        href=" https://open.spotify.com/artist/6RaUAGMkfqkXcXElhQ91lR?si=0cS9ApAUTCGU8Udtq2ysBw"
+                                        target="_blank"
+                                    >
+                                        @jaisairin
+                                    </Anchor>
+                                    </p>
+                                    <p>soundcloud: <Anchor
+                                        href="https://soundcloud.com/jaisairin"
+                                        target="_blank"
+                                    >
+                                        @jaisairin
                                     </Anchor>
                                     </p>
                                 </div>
