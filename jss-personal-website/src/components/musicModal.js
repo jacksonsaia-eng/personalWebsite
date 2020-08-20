@@ -17,13 +17,15 @@ const MusicModal = () => {
     };
 
     return (
-        <Draggable handle='.window-header' defaultPosition={{ x: -200, y: 0 }}>
+        <Draggable handle='.window-header'>
             <Window
                 onClick={_handleClick}
                 style={{
                     width: 1000,
                     maxWidth: '94%',
                     maxHeight: '100%',
+                    top: '10%',
+                    left: '2%',
                     zIndex: state.activeModal === 'music' ? 2 : 1,
                     position: 'fixed',
                     transform: 'translate(-50%, -50%)',

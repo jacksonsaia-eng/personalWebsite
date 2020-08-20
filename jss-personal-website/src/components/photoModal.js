@@ -18,13 +18,15 @@ const PhotoModal = () => {
     };
 
     return (
-        <Draggable handle='.window-header' defaultPosition={{ x: 300, y: 50 }}>
+        <Draggable handle='.window-header'>
             <Window
                 onClick={_handleClick}
                 style={{
                     width: 800,
                     height: 600,
                     maxWidth: '94%',
+                    top: '15%',
+                    left: '45%',
                     zIndex: state.activeModal === 'photo' ? 2 : 1,
                     position: 'fixed',
                     transform: 'translate(-50%, -50%)',
