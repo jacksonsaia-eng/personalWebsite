@@ -22,7 +22,6 @@ const VideoModalButton = () => {
                     <span role='img' aria-label='🎥'>
                         🎥
                     </span>
-                video
                 </Button>
             )}
         </>

@@ -18,7 +18,7 @@ const PhotoModal = () => {
     };
 
     return (
-        <Draggable>
+        <Draggable handle='.window-header'>
             <Window
                 onClick={_handleClick}
                 style={{
@@ -31,7 +31,7 @@ const PhotoModal = () => {
                     display: state.photoModal ? 'block' : 'none',
                 }}
             >
-                <WindowHeader style={{
+                <WindowHeader className='window-header' style={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',

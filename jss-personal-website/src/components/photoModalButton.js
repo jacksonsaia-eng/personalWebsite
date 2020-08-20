@@ -22,7 +22,6 @@ const PhotoModalButton = () => {
                     <span role='img' aria-label='📷'>
                         📷
                     </span>
-                photo
                 </Button>
             )}
         </>

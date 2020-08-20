@@ -22,7 +22,6 @@ const AboutModalButton = () => {
                     <span role='img' aria-label='📋'>
                         📋
                     </span>
-                about
                 </Button>
             )}
         </>

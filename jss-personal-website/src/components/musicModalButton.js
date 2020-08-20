@@ -22,7 +22,6 @@ const MusicModalButton = () => {
                     <span role='img' aria-label='🎧'>
                         🎧
                     </span>
-                music
                 </Button>
             )}
         </>

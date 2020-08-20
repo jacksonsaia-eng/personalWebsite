@@ -21,7 +21,7 @@ const AboutModal = () => {
     };
 
     return (
-        <Draggable>
+        <Draggable handle='.window-header'>
             <Window
                 onClick={_handleClick}
                 style={{
@@ -34,7 +34,7 @@ const AboutModal = () => {
                     display: state.aboutModal ? 'block' : 'none',
                 }}
             >
-                <WindowHeader style={{
+                <WindowHeader className='window-header' style={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
@@ -51,7 +51,7 @@ const AboutModal = () => {
                         <Tab value={0}>overview</Tab>
                         <Tab value={1}>contact</Tab>
                     </Tabs>
-                    <TabBody style={{ height: 300 }}>
+                    <TabBody style={{ height: 325 }}>
                         {state.tab === 0 && (
                             <p>
                                 welcome! my name is jackson saia and i am passionate about the intersection of art and

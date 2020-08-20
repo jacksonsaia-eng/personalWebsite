@@ -17,7 +17,7 @@ const VideoModal = () => {
     };
 
     return (
-        <Draggable>
+        <Draggable handle='.window-header'>
             <Window
                 onClick={_handleClick}
                 style={{
@@ -30,7 +30,7 @@ const VideoModal = () => {
                     display: state.videoModal ? 'block' : 'none',
                 }}
             >
-                <WindowHeader style={{
+                <WindowHeader className='window-header' style={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
