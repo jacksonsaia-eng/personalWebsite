@@ -4,14 +4,14 @@ export const StoreContext = createContext({});
 
 const initialState = {
     aboutModal: true,
-    musicModal: false,
-    photoModal: false,
-    videoModal: false,
-    activeModal: 'photo',
+    musicModal: true,
+    photoModal: true,
+    videoModal: true,
+    activeModal: 'about',
     hideAboutModalButton: false,
-    hideMusicModalButton: true,
-    hidePhotoModalButton: true,
-    hideVideoModalButton: true,
+    hideMusicModalButton: false,
+    hidePhotoModalButton: false,
+    hideVideoModalButton: false,
     tab: 0,
 };
 

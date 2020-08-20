@@ -17,7 +17,7 @@ const MusicModal = () => {
     };
 
     return (
-        <Draggable>
+        <Draggable handle='.window-header' defaultPosition={{ x: -200, y: 0 }}>
             <Window
                 onClick={_handleClick}
                 style={{
@@ -30,7 +30,7 @@ const MusicModal = () => {
                     display: state.musicModal ? 'block' : 'none',
                 }}
             >
-                <WindowHeader style={{
+                <WindowHeader className='window-header' style={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',

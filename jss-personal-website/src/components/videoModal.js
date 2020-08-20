@@ -17,7 +17,7 @@ const VideoModal = () => {
     };
 
     return (
-        <Draggable handle='.window-header'>
+        <Draggable handle='.window-header' defaultPosition={{ x: -425, y: 125 }}>
             <Window
                 onClick={_handleClick}
                 style={{

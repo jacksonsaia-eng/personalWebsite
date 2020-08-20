@@ -18,7 +18,7 @@ const PhotoModal = () => {
     };
 
     return (
-        <Draggable handle='.window-header'>
+        <Draggable handle='.window-header' defaultPosition={{ x: 300, y: 50 }}>
             <Window
                 onClick={_handleClick}
                 style={{
